@@ -6,8 +6,14 @@
     font-weight: $global-weight-bold;
 
     &.primary {
-        background: $primary-color;
+        //background: $primary-color;
+        background: linear-gradient(120deg, $secondary-color 10%, adjust_color($secondary-color, $hue: -10) 90%);
         box-shadow: 0 0.5rem 1rem rgba($primary-color, 0.1);
+
+        &:hover,
+        &:focus {
+            background: linear-gradient(120deg, adjust_color($secondary-color, $lightness: -10%) 10%, adjust_color($secondary-color, $hue: -10, $lightness: -10%) 90%);
+        }
     }
 
     &.secondary {
