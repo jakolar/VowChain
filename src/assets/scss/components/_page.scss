@@ -1,0 +1,25 @@
+@import 'util/mixins';
+@import 'settings';
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: #F3E5F5;
+    padding: 2.5rem 2rem;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+        background: #fff;
+        z-index: -1;
+        border-radius: 0.25rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(#000, 0.05);
+    }
+}

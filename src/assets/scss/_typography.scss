@@ -1,0 +1,54 @@
+@import 'util/mixins';
+@import 'settings';
+
+.logo {
+    text-align: center;
+    margin: 1rem 0;
+
+    @include breakpoint(medium up) {
+        margin: 1.5rem 0;
+    }
+
+    @include breakpoint(medium up) {
+        margin: 2rem 0;
+    }
+    
+    .vow {
+        color: $secondary-color;
+    }
+
+    .chain {
+        color: $primary-color;
+    }
+}
+
+.small-caps {
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+
+.extra-margin-top {
+    margin-top: 2.5rem;
+}
+
+
+p {
+    @include breakpoint(medium up) {
+        font-size: $global-font-size * 1.25;
+        margin-bottom: 1.5rem;
+
+        &.lead {
+            font-size: $global-font-size * 1.5;
+        }
+    }
+
+    @include breakpoint(large up) {
+        font-size: $global-font-size * 1.5;
+        margin-bottom: 2rem;
+
+        &.lead {
+            font-size: $global-font-size * 1.75;
+        }
+    }
+}

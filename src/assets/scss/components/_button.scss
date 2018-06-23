@@ -1,0 +1,23 @@
+@import 'util/mixins';
+@import 'settings';
+
+.button {
+    font-family: $header-font-family;
+    font-weight: $global-weight-bold;
+
+    &.primary {
+        background: $primary-color;
+        box-shadow: 0 0.5rem 1rem rgba($primary-color, 0.1);
+    }
+
+    &.secondary {
+        background: $secondary-color;
+        box-shadow: 0 0.5rem 1rem rgba($secondary-color, 0.1);
+        color: $white;
+
+        &:hover,
+        &:focus {
+            color: $white;
+        }
+    }
+}

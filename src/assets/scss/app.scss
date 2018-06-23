@@ -51,3 +51,13 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+
+// customizations
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,900|Merriweather:400,900&subset=latin-ext');
+
+@import 'components/page';
+@import 'components/button';
+
+@import 'typography';
