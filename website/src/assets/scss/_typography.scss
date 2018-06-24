@@ -32,6 +32,10 @@
     margin-top: 2.5rem;
 }
 
+.extra-margin-bottom {
+    margin-bottom: 2.5rem;
+}
+
 
 p {
     @include breakpoint(medium up) {
