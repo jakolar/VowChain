@@ -69,9 +69,8 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #7B1FA2,
-  //secondary: scale-color(#512DA8, $hue: +75%, $lightness: +50%, $saturation: +10%),
-  secondary: #FF7043,
+  primary: #88419C,
+  secondary: #3DD1D4,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -79,7 +78,7 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: change-color(map-get($foundation-palette, primary), $lightness: 15%, $saturation: 25%);
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;

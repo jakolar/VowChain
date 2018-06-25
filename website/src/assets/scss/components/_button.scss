@@ -7,7 +7,7 @@
 
     &.primary {
         //background: $primary-color;
-        background: 5% 5% linear-gradient(120deg, $secondary-color 5%, adjust_color($secondary-color, $hue: -10) 50%, $primary-color 100%);
+        background: 5% 5% linear-gradient(120deg, $secondary-color 20%, scale-color($secondary-color, $hue: +10%) 50%, $primary-color 100%);
         background-size: 110% 500%;
         box-shadow: 0 0.5rem 1rem rgba($primary-color, 0.1);
 
