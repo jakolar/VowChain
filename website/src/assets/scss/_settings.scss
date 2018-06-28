@@ -75,11 +75,11 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$light-gray: change-color(map-get($foundation-palette, primary), $lightness: 85%, $saturation: 25%);
+$medium-gray: change-color(map-get($foundation-palette, primary), $lightness: 65%, $saturation: 25%);
+$dark-gray: change-color(map-get($foundation-palette, primary), $lightness: 45%, $saturation: 25%);
 $black: change-color(map-get($foundation-palette, primary), $lightness: 15%, $saturation: 25%);
-$white: #fefefe;
+$white: #FFFFFF;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Merriweather', serif;
@@ -172,7 +172,7 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $medium-gray;
+$hr-border: 1px solid $light-gray;
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;

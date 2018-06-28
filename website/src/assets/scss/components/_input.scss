@@ -1,0 +1,26 @@
+@import 'util/mixins';
+@import 'settings';
+
+.input-group {
+    input,
+    .button {
+        padding: 0.75rem 1.25rem;
+
+        &[type=text] {
+            font-family: $header-font-family;
+        }
+    }
+
+    &>:first-child {
+        border-radius: 3rem 0 0 3rem;
+    }
+
+    &>:last-child,
+    &>:last-child>:first-child {
+        border-radius: 0 3rem 3rem 0;
+
+        &.hollow {
+            margin-left: -1px;
+        }
+    }
+}
