@@ -22750,11 +22750,31 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var vowAttributePhrases = {
+    'sexual_fidelity': 'You [value] agreed to sexual exclusivity.',
+    'share_medical_records': 'You [value] agreed to mutual sharing of your mediacal records.',
+    'support_each_other': 'You [value] agreed to support each other.',
+    'relationship_duration_months': function relationship_duration_months(duration) {
+        if (duration === 0) return 'You have agreed to indefinite duration of this relationship.';
+        return 'You have agreed to terminate your relationship after ' + duration + " months.";
+    }
+};
+
+function phraseFromBool(value) {
+    if (value === true) {
+        return 'have';
+    }
+    return 'have not';
+}
+
 function handleSuccess(data, tag) {
     $.each(data, function (key, value) {
-        // todo: test this when the api actually works
-        $("<div/>", { html: value }).appendTo(tag);
-        // $("handleErrorData").appendTo(tag);
+        var phrasedValue = vowAttributePhrases[key];
+
+        var formattedValue = void 0;
+        if (typeof phrasedValue === 'function') formattedValue = phrasedValue.call(this, value);else formattedValue = phrasedValue.replace('[value]', phraseFromBool(value));
+
+        $('<p/>', { html: formattedValue }).appendTo(tag);
     });
 }
 
@@ -22762,12 +22782,12 @@ function handleError(jqXHR, textStatus, errorThrown, tag) {
     // todo: remove before prod
     console.log(errorThrown);
 
-    $("<p/>", { html: "We were unable to load the requested smart contract.<br>Please try again." }).appendTo(tag);
+    $('<p/>', { html: 'We were unable to load the requested smart contract.<br>Please try again.' }).appendTo(tag);
 }
 
 function loadContract(url, tag) {
     $.ajax({
-        dataType: "json",
+        dataType: 'json',
         url: url,
         crossDomain: true,
         success: function success(data) {
@@ -22786,17 +22806,17 @@ function showContract(tag) {
 
     var queryString = __webpack_require__(39);
     var parsedUrl = queryString.parse(location.search);
-    var contractAddress = parsedUrl["contract"];
+    var contractAddress = parsedUrl['contract'];
 
     if (typeof contractAddress === 'undefined') {
-        $("<p/>", { html: "Please enter the smart contract's address" }).appendTo(contentTag);
+        $("<p/>", { html: 'Please enter the smart contract\'s address' }).appendTo(contentTag);
         return;
     }
 
-    var addressInput = tag + " #smart-contract-address";
+    var addressInput = tag + ' #smart-contract-address';
     $(addressInput).val(contractAddress);
 
-    var apiURL = "http://46.101.117.31:80/api/contract_state/";
+    var apiURL = 'http://46.101.117.31:80/api/contract_state/';
     var fullURL = apiURL + contractAddress;
 
     loadContract(fullURL, contentTag);

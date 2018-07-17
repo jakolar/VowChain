@@ -148,3 +148,5 @@ fabric.properties
 .idea/workspace.xml
 website/.idea/inspectionProfiles/
 website/etc/
+#docs/assets/img/
+#docs/contract.html
