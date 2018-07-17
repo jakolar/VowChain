@@ -29,4 +29,11 @@
             color: $white;
         }
     }
+
+    &.hollow {
+        &:hover,
+        &:focus {
+            background: $light-gray;
+        }
+    }
 }

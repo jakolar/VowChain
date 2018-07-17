@@ -75,9 +75,9 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: change-color(map-get($foundation-palette, primary), $lightness: 85%, $saturation: 25%);
-$medium-gray: change-color(map-get($foundation-palette, primary), $lightness: 65%, $saturation: 25%);
-$dark-gray: change-color(map-get($foundation-palette, primary), $lightness: 45%, $saturation: 25%);
+$light-gray: change-color(map-get($foundation-palette, primary), $lightness: 85%, $saturation: 15%);
+$medium-gray: change-color(map-get($foundation-palette, primary), $lightness: 65%, $saturation: 17%);
+$dark-gray: change-color(map-get($foundation-palette, primary), $lightness: 45%, $saturation: 20%);
 $black: change-color(map-get($foundation-palette, primary), $lightness: 15%, $saturation: 25%);
 $white: #FFFFFF;
 $body-background: $white;

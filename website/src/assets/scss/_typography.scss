@@ -57,6 +57,18 @@ p {
     }
 }
 
+a {
+    &:not(.button) {
+        transition: $button-transition;
+        border-bottom: 1px solid transparent;
+
+        &:hover,
+        &:focus {
+            border-bottom-color: rgba($anchor-color-hover, .5);
+        }
+    }
+}
+
 hr {
 
 }
